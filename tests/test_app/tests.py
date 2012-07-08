@@ -22,20 +22,20 @@ class SaintyChecks(TestCase):
 
 
 
-class SeleniumTests(LiveServerTestCase):
-    fixtures = ['default_users.json']
-
-    @classmethod
-    def setUpClass(cls):
-        cls.selenium = WebDriver()
-        super(SeleniumTests, cls).setUpClass()
-
-    @classmethod
-    def tearDownClass(cls):
-        super(SeleniumTests, cls).tearDownClass()
-        cls.selenium.quit()
-
-    def test_login(self):
-        self.selenium.get('%s%s' % (self.live_server_url, '/test_click/'))
-        self.selenium.find_element_by_id("wm_click").click()
-        self.assertEqual('Button clicked', self.selenium.find_element_by_id("wm_target").text)
+#class SeleniumTests(LiveServerTestCase):
+#    fixtures = ['default_users.json']
+#
+#    @classmethod
+#    def setUpClass(cls):
+#        cls.selenium = WebDriver()
+#        super(SeleniumTests, cls).setUpClass()
+#
+#    @classmethod
+#    def tearDownClass(cls):
+#        super(SeleniumTests, cls).tearDownClass()
+#        cls.selenium.quit()
+#
+#    def test_login(self):
+#        self.selenium.get('%s%s' % (self.live_server_url, '/test_click/'))
+#        self.selenium.find_element_by_id("wm_click").click()
+#        self.assertEqual('Button clicked', self.selenium.find_element_by_id("wm_target").text)
